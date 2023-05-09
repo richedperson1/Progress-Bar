@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress bar</title>
+</head>
+
+<style>
+    :root {
+        --border-color: #6e6b6a;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .container {
+
+        align-items: center;
+        justify-content: center;
+        gap: 90px;
+    }
+
+    .state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--border-color);
+        position: relative;
+        z-index: 5;
+        transition: 1s ease;
+        transform-origin: left;
+    }
+
+
+
+    .underline {
+        position: absolute;
+        right: 100%;
+        border: 1px solid var(--border-color);
+        z-index: 1;
+        overflow: hidden;
+        width: 222%;
+        transform: translate(-1.3px);
+        transition: 1s ease;
+        transform-origin: 0%;
+    }
+
+    div.main {
+        flex-direction: column;
+        height: 700px;
+        background-color: rgb(217, 159, 22);
+    }
+
+    div.button {
+        display: flex;
+        gap: 30px;
+    }
+
+    div.button button {
+        display: inline-block;
+        padding: 5px;
+        border-radius: 10px;
+        width: 5rem;
+        cursor: pointer;
+
+    }
+
+    .active {
+        border-color: black;
+        background-color: aqua;
+    }
+</style>
+
+<body>
+    <div class="main container flex">
+        <main class="container flex">
+            <div class="state active" id="each-state-1 active">
+                1
+            </div>
+            <div class="state deactive" id="each-state-2">
+                2
+                <span class="underline "></span>
+            </div>
+            <div class="state deactive" id="each-state-3">
+                3
+                <span class="underline"></span>
+            </div>
+            <div class="state deactive" id="each-state-4">
+                4
+                <span class="underline"></span>
+            </div>
+        </main>
+        <div class="button">
+            <button class="prevBtn">Prev</button>
+            <button class="nextBtn">Next</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
